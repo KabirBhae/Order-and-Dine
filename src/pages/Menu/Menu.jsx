@@ -28,10 +28,10 @@ const Menu = () => {
 			<Cover bgImg={menuImg} title="our menu"></Cover>
 			<SectionTitle subHeading={"Don't miss"} heading={"today's offer"}></SectionTitle>
 			<MenuCategory categoryData={todayOffers}></MenuCategory>
-			<MenuCategory categoryData={desserts} categoryImg={dessertImg} categoryTitle={"Desserts"} categoryDetails={dessertDetails}></MenuCategory>
-			<MenuCategory categoryData={pizzas} categoryImg={pizzaImg} categoryTitle={"Pizzas"} categoryDetails={pizzaDetails}></MenuCategory>
-			<MenuCategory categoryData={salads} categoryImg={saladImg} categoryTitle={"Salads"} categoryDetails={saladDetails}></MenuCategory>
-			<MenuCategory categoryData={soups} categoryImg={soupImg} categoryTitle={"Soups"} categoryDetails={soupDetails}></MenuCategory>
+			<MenuCategory categoryData={desserts} categoryImg={dessertImg} categoryTitle={"desserts"} categoryDetails={dessertDetails}></MenuCategory>
+			<MenuCategory categoryData={pizzas} categoryImg={pizzaImg} categoryTitle={"pizzas"} categoryDetails={pizzaDetails}></MenuCategory>
+			<MenuCategory categoryData={salads} categoryImg={saladImg} categoryTitle={"salads"} categoryDetails={saladDetails}></MenuCategory>
+			<MenuCategory categoryData={soups} categoryImg={soupImg} categoryTitle={"soups"} categoryDetails={soupDetails}></MenuCategory>
 		</div>
 	);
 };

@@ -6,9 +6,13 @@ import Cover from "../shared/Cover";
 import { useState } from "react";
 import useMenu from "../../hooks/useMenu";
 import FoodCard from "../../components/FoodCard";
+import { useParams } from "react-router-dom";
 
 const Order = () => {
-    const [tabIndex, setTabIndex] = useState(0)
+	const categories = ["salads", "pizzas", "soups", "desserts", "drinks"];
+	const { category } = useParams();
+	const catIndex = categories.indexOf(category);
+	const [tabIndex, setTabIndex] = useState(catIndex);
 	const [menu] = useMenu();
 	//category data
 	const desserts = menu.filter(item => item.category === "dessert");
@@ -17,17 +21,15 @@ const Order = () => {
 	const soups = menu.filter(item => item.category === "soup");
 	const drinks = menu.filter(item => item.category === "drinks");
 
-
-
 	return (
 		<div>
 			<Cover bgImg={orderCoverImg} title={"Order Food"} details={"Would you like to try a dish?"}></Cover>
 			<Tabs defaultIndex={tabIndex} onSelect={index => setTabIndex(index)}>
 				<TabList>
-					<Tab>Salad</Tab>
-					<Tab>Pizza</Tab>
-					<Tab>Soup</Tab>
-					<Tab>Dessert</Tab>
+					<Tab>Salads</Tab>
+					<Tab>Pizzas</Tab>
+					<Tab>Soups</Tab>
+					<Tab>Desserts</Tab>
 					<Tab>Drinks</Tab>
 				</TabList>
 				<TabPanel>

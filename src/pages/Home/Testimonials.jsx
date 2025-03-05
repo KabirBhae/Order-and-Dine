@@ -6,14 +6,14 @@ import { Navigation } from "swiper/modules";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 
-import SectionTitle from "../../../components/SectionTitle";
+import SectionTitle from "../../components/SectionTitle";
 import { FaQuoteLeft } from "react-icons/fa6";
 
 const Testimonials = () => {
 	const [reviews, setReviews] = useState([]);
 
 	useEffect(() => {
-		fetch("reviews.json")
+		fetch("http://localhost:5002/reviews")
 			.then(res => res.json())
 			.then(data => {
 				setReviews(data);
