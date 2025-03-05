@@ -1,13 +1,11 @@
-import Footer from "../../shared/Footer";
-import Navbar from "../../shared/Navbar/Navbar";
 import Banner from "../Banner/Banner";
+import Category from "../Category/Category";
 
 const Home = () => {
     return (
         <div>
-            <Navbar></Navbar>
             <Banner></Banner>
-            <Footer></Footer>
+            <Category></Category>
         </div>
     );
 };
