@@ -8,7 +8,7 @@ import img5 from "../../../assets/home/05.png";
 import img6 from "../../../assets/home/06.png";
 const Banner = () => {
 	return (
-		<div className="mb-10">
+		<div className="mb-16">
 			<Carousel infiniteLoop={true} showThumbs={false}>
 				<div className=" h-140 relative">
 					<img className="absolute left-0 bottom-0" src={img1} />
