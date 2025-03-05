@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import SectionTitle from "../../components/SectionTitle/SectionTitle";
+import SectionTitle from "../../components/SectionTitle";
 import MenuItem from "../shared/MenuItem/MenuItem";
 
 const PopularMenu = () => {
