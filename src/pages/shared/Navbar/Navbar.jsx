@@ -1,16 +1,16 @@
 import "./Navbar.css"
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 const Navbar = () => {
 	const navOptions = (
 		<>
 			<li>
-				<Link to="">Home</Link>
+				<NavLink to="/">Home </NavLink>
 			</li>
 			<li>
-				<Link to="menu">Our Menu</Link>
+				<NavLink to="menu">Our Menu</NavLink>
 			</li>
 			<li>
-				<a>Item 3</a>
+				<NavLink to="order">Order Now</NavLink>
 			</li>
 		</>
 	);
