@@ -1,10 +1,9 @@
-import { useContext } from "react";
 import "./Navbar.css";
 import { NavLink, Link } from "react-router-dom";
-import { AuthContext } from "../../../providers/AuthProvider";
 import Swal from "sweetalert2";
+import useAuth from "../../../hooks/useAuth";
 const Navbar = () => {
-	const { user, logoutUser } = useContext(AuthContext);
+	const { user, logoutUser } = useAuth()
 	const handleLogout = () => {
 		logoutUser()
 			.then(() => {

@@ -1,10 +1,10 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
+import useAuth from "../hooks/useAuth";
 
 const Signup = () => {
-	const { createUser, updateUser } = useContext(AuthContext);
+	const { createUser, updateUser } = useAuth();
 	const navigate = useNavigate();
 	const [customError, setCustormError] = useState({});
 

@@ -1,11 +1,11 @@
-import { useContext, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from "react-simple-captcha";
-import { AuthContext } from "../providers/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import useAuth from "../hooks/useAuth";
 
 const Login = () => {
-	const { signInUser } = useContext(AuthContext);
+	const { signInUser } = useAuth();
 	const location = useLocation();
 	const navigate = useNavigate();
 
