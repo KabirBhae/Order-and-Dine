@@ -2,6 +2,7 @@ import "./Navbar.css";
 import { NavLink, Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAuth from "../../../hooks/useAuth";
+import { FaShoppingCart } from "react-icons/fa";
 const Navbar = () => {
 	const { user, logoutUser } = useAuth()
 	const handleLogout = () => {
@@ -36,9 +37,17 @@ const Navbar = () => {
 			<li>
 				<NavLink to="order">Order Now</NavLink>
 			</li>
+			<li>
+				<Link to="/dashboard/cart">
+					<button className="btn">
+						<FaShoppingCart className="mr-2"></FaShoppingCart>
+						<div className="badge badge-secondary">+0</div>
+					</button>
+				</Link>
+			</li>
 			{user && user?.email ? (
 				<li onClick={handleLogout} className="btn btn-ghost rounded-none">
-						Logout
+					Logout
 				</li>
 			) : (
 				<li>
