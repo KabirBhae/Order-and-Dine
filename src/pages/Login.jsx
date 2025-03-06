@@ -1,28 +1,38 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from "react-simple-captcha";
+import { AuthContext } from "../providers/AuthProvider";
+import { Link, useNavigate } from "react-router-dom";
 const Login = () => {
-	useEffect(() => loadCaptchaEnginge(4),[])
-	const [inputDisabled, setInputDisabled] = useState(true)
+	const { signInUser } = useContext(AuthContext);
+	const navigate = useNavigate()
+	const [customError, setCustormError] = useState({});
+
 	const handleLogin = e => {
 		e.preventDefault();
 		const form = e.target;
 		const email = form.email.value;
 		const password = form.password.value;
-
-
-		console.log(email, password);
+		signInUser(email, password)
+			.then(userCredential => {
+				navigate("/");
+			})
+			.catch(err => {
+				setCustormError({ ...err, registerError: err.code });
+			});
 	};
 	//for captcha related functionalities
-	const captchaRef = useRef(null)
-	const handleValidateCaptcha = () =>{
-		 const captchaValue = captchaRef.current.value;
-
-		 if (validateCaptcha(captchaValue)) {
-				setInputDisabled(false)
-			} else {
-				setInputDisabled(true);
-			}
-	}
+	useEffect(() => loadCaptchaEnginge(4), []);
+	const [inputDisabled, setInputDisabled] = useState(true);
+	const captchaRef = useRef(null);
+	const handleValidateCaptcha = (e) => {
+		e.preventDefault();
+		const captchaValue = captchaRef.current.value;
+		if (validateCaptcha(captchaValue)) {
+			setInputDisabled(false);
+		} else {
+			setInputDisabled(true);
+		}
+	};
 	return (
 		<div className="hero bg-base-200 min-h-screen">
 			<div className="hero-content flex-col md:flex-row-reverse">
@@ -43,11 +53,22 @@ const Login = () => {
 							<button onClick={handleValidateCaptcha} className="btn btn-outline btn-xs mt-2">
 								Validate Captcha
 							</button>
+							{customError && (
+								<label className="label mb-2">
+									<span className="label-text text-xs text-red-500">{customError.registerError}</span>
+								</label>
+							)}
 							<input disabled={inputDisabled} type="submit" value="Login" className="btn btn-neutral mt-4" />
 						</fieldset>
+						<p className="text-center">
+							New Here?{" "}
+							<Link className="text-blue-600" to="/signup">
+								Create an account
+							</Link>
+						</p>
 					</form>
 				</div>
-				<div className="text-center md:text-left">
+				<div className="text-center md:text-left md:w-1/2">
 					<h1 className="text-5xl font-bold">Login now!</h1>
 					<p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
 				</div>

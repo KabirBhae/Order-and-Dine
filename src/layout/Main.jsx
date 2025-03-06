@@ -3,16 +3,16 @@ import Navbar from '../pages/shared/Navbar/Navbar';
 import Footer from '../pages/shared/Footer';
 
 const Main = () => {
-    const location = useLocation();
-    let isLogin;
-    location.pathname.includes('login')? isLogin = true: isLogin = false
-    return (
-			<div>
-				{!isLogin && <Navbar />}
-				<Outlet></Outlet>
-				{!isLogin && <Footer></Footer>}
-			</div>
-		);
+	const location = useLocation();
+	//if noHeaderFooter is true, then don't load navbar and footer
+	const noHeaderFooter = location.pathname.includes("login") || location.pathname.includes("signup");
+	return (
+		<div>
+			{!noHeaderFooter && <Navbar />}
+			<Outlet></Outlet>
+			{!noHeaderFooter && <Footer></Footer>}
+		</div>
+	);
 };
 
 export default Main;
