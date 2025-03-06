@@ -1,10 +1,17 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from "react-simple-captcha";
 import { AuthContext } from "../providers/AuthProvider";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+
 const Login = () => {
 	const { signInUser } = useContext(AuthContext);
-	const navigate = useNavigate()
+	const location = useLocation();
+	const navigate = useNavigate();
+
+	let loginString = "Login now!";
+	if (location.state) loginString = "Login to continue";
+
 	const [customError, setCustormError] = useState({});
 
 	const handleLogin = e => {
@@ -13,8 +20,15 @@ const Login = () => {
 		const email = form.email.value;
 		const password = form.password.value;
 		signInUser(email, password)
-			.then(userCredential => {
-				navigate("/");
+			.then(() => {
+				Swal.fire({
+					position: "top",
+					icon: "success",
+					title: "Login successful",
+					showConfirmButton: false,
+					timer: 2000,
+				});
+				navigate(location?.state ? location.state : "/");
 			})
 			.catch(err => {
 				setCustormError({ ...err, registerError: err.code });
@@ -24,7 +38,7 @@ const Login = () => {
 	useEffect(() => loadCaptchaEnginge(4), []);
 	const [inputDisabled, setInputDisabled] = useState(true);
 	const captchaRef = useRef(null);
-	const handleValidateCaptcha = (e) => {
+	const handleValidateCaptcha = e => {
 		e.preventDefault();
 		const captchaValue = captchaRef.current.value;
 		if (validateCaptcha(captchaValue)) {
@@ -69,7 +83,7 @@ const Login = () => {
 					</form>
 				</div>
 				<div className="text-center md:text-left md:w-1/2">
-					<h1 className="text-5xl font-bold">Login now!</h1>
+					<h1 className="text-5xl font-bold">{loginString}</h1>
 					<p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
 				</div>
 			</div>

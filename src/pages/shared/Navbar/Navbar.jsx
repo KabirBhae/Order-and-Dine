@@ -1,8 +1,33 @@
-import "./Navbar.css"
+import { useContext } from "react";
+import "./Navbar.css";
 import { NavLink, Link } from "react-router-dom";
+import { AuthContext } from "../../../providers/AuthProvider";
+import Swal from "sweetalert2";
 const Navbar = () => {
+	const { user, logoutUser } = useContext(AuthContext);
+	const handleLogout = () => {
+		logoutUser()
+			.then(() => {
+				Swal.fire({
+					position: "top",
+					icon: "success",
+					title: "Logged out successfully",
+					showConfirmButton: false,
+					timer: 1000,
+				});
+			})
+			.catch(() => {
+				Swal.fire({
+					position: "top",
+					icon: "warning",
+					title: "Logged out not successful",
+					showConfirmButton: false,
+					timer: 1500,
+				});
+			});
+	};
 	const navOptions = (
-		<>
+		<div className="flex items-center">
 			<li>
 				<NavLink to="/">Home </NavLink>
 			</li>
@@ -12,10 +37,16 @@ const Navbar = () => {
 			<li>
 				<NavLink to="order">Order Now</NavLink>
 			</li>
-			<li>
-				<NavLink to="login">Login</NavLink>
-			</li>
-		</>
+			{user && user?.email ? (
+				<li onClick={handleLogout} className="btn btn-ghost rounded-none">
+						Logout
+				</li>
+			) : (
+				<li>
+					<NavLink to="login">Login</NavLink>
+				</li>
+			)}
+		</div>
 	);
 	return (
 		<div className="navbar max-w-7xl fixed z-10 shadow-sm text-white custom-opacity">
@@ -23,7 +54,6 @@ const Navbar = () => {
 				<div className="dropdown">
 					<div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
 						<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-							{" "}
 							<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />{" "}
 						</svg>
 					</div>
@@ -31,7 +61,9 @@ const Navbar = () => {
 						{navOptions}
 					</ul>
 				</div>
-				<Link to="/" className="btn btn-ghost text-xl">Bistro Boss</Link>
+				<Link to="/" className="btn btn-ghost text-xl">
+					Bistro Boss
+				</Link>
 			</div>
 			<div className="navbar-center hidden lg:flex">
 				<ul className="menu menu-horizontal px-1">{navOptions}</ul>
