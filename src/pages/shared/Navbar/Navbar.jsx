@@ -69,7 +69,8 @@ const Navbar = () => {
 				<ul className="menu menu-horizontal px-1">{navOptions}</ul>
 			</div>
 			<div className="navbar-end">
-				<a className="btn">Get Started</a>
+				{user?.displayName && <span> {user?.displayName.toUpperCase()}</span>}
+				{user?.photoURL && <img className="w-10 h-10 object-cover ml-2" src={user.photoURL} alt="" />}
 			</div>
 		</div>
 	);

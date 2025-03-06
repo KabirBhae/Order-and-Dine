@@ -1,28 +1,42 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const Signup = () => {
-    const { createUser } = useContext(AuthContext);
-    const navigate = useNavigate();
-    const [customError, setCustormError] = useState({});
+	const { createUser, updateUser } = useContext(AuthContext);
+	const navigate = useNavigate();
+	const [customError, setCustormError] = useState({});
 
-    const handleSignUp = e => {
-			e.preventDefault();
-			const form = new FormData(e.target);
-			const name = form.get("name");
-			const email = form.get("email");
-			// const photoURL = form.get("photo");
-			const password = form.get("password");
+	const handleSignUp = e => {
+		e.preventDefault();
+		const form = new FormData(e.target);
+		const name = form.get("name");
+		const email = form.get("email");
+		const photoURL = form.get("photo");
+		const password = form.get("password");
 
-			createUser(email, password)
-				.then(() => {
-					navigate("/")
-				})
-				.catch(err => {
-					setCustormError({ ...err, registerError: err.code });
-				});
-		};
+		createUser(email, password)
+			.then(() => {
+				updateUser(name, photoURL)
+					.then(() => {
+						Swal.fire({
+							position: "top",
+							icon: "success",
+							title: "Signup successful",
+							showConfirmButton: false,
+							timer: 2000,
+						});
+						navigate("/");
+					})
+					.catch(err => {
+						setCustormError({ ...err, registerError: err.code });
+					});
+			})
+			.catch(err => {
+				setCustormError({ ...err, registerError: err.code });
+			});
+	};
 	return (
 		<div className="hero bg-base-200 min-h-screen">
 			<div className="hero-content flex-col md:flex-row-reverse">
@@ -30,11 +44,13 @@ const Signup = () => {
 					<form onSubmit={handleSignUp} className="card-body">
 						<fieldset className="fieldset">
 							<label className="fieldset-label">Name</label>
-							<input type="text" name="name" className="input" placeholder="Enter your Name" />
+							<input required type="text" name="name" className="input" placeholder="Enter your Name" />
 							<label className="fieldset-label">Email</label>
-							<input type="email" name="email" className="input" placeholder="Enter your Email" />
+							<input required type="email" name="email" className="input" placeholder="Enter your Email" />
+							<label className="fieldset-label">Photo URL</label>
+							<input type="url" name="photo" className="input" placeholder="Enter the link to your Photo" />
 							<label className="fieldset-label">Password</label>
-							<input type="password" name="password" className="input" placeholder="Enter your Password" />
+							<input required type="password" name="password" className="input" placeholder="Enter your Password" />
 							{customError && (
 								<label className="label mb-2">
 									<span className="label-text text-xs text-red-500">{customError.registerError}</span>
