@@ -6,15 +6,17 @@ const MenuCategory = ({ categoryData, categoryImg, categoryTitle, categoryDetail
 	return (
 		<div>
 			{categoryTitle && <Cover bgImg={categoryImg} title={categoryTitle} details={categoryDetails}></Cover>}
-			<div className="grid md:grid-cols-2 gap-10 my-15">
+			<div className="grid md:grid-cols-2 gap-10 mt-15">
 				{categoryData.map(menuItem => (
 					<MenuItem key={menuItem._id} item={menuItem}></MenuItem>
 				))}
 			</div>
 			{categoryTitle && (
-				<Link to={`/order/${categoryTitle}`}>
-					<button className="btn btn-outline border-0 border-b-4 mt-4">Order Now</button>
-				</Link>
+				<div className="w-full flex justify-center">
+					<Link to={`/order/${categoryTitle}`}>
+						<button className="btn btn-outline btn-lg hover:bg-black hover:text-yellow-400 border-0 hover:border-yellow-400 border-b-4 my-10 inter-font">Order Now</button>
+					</Link>
+				</div>
 			)}
 		</div>
 	);
