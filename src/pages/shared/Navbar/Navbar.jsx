@@ -80,7 +80,7 @@ const Navbar = () => {
 			</div>
 			<div className="navbar-end">
 				{user?.displayName && <span> {user?.displayName.toUpperCase()}</span>}
-				{user?.photoURL && <img className="w-10 h-10 object-cover ml-2" src={user.photoURL} alt="" />}
+				{user?.photoURL && <img className="w-10 h-10 object-cover ml-2" src={user.photoURL} alt="Profile Image" />}
 			</div>
 		</div>
 	);
