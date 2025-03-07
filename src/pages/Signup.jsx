@@ -2,9 +2,11 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAuth from "../hooks/useAuth";
+import useAxiosPublic from "../hooks/useAxiosPublic";
 
 const Signup = () => {
 	const { createUser, updateUser } = useAuth();
+	const axiosPublic = useAxiosPublic();
 	const navigate = useNavigate();
 	const [customError, setCustormError] = useState({});
 
@@ -15,19 +17,33 @@ const Signup = () => {
 		const email = form.get("email");
 		const photoURL = form.get("photo");
 		const password = form.get("password");
-
+		//to create user using firebase
 		createUser(email, password)
 			.then(() => {
+				//to update user info using firebase
 				updateUser(name, photoURL)
 					.then(() => {
-						Swal.fire({
-							position: "top",
-							icon: "success",
-							title: "Signup successful",
-							showConfirmButton: false,
-							timer: 2000,
+						//after updating, create an object to store information of user in the database
+						const userInfo = {
+							name: name,
+							email: email,
+						};
+						//storing information of user in the database
+						axiosPublic.post("/users", userInfo)
+							.then(res => {
+								//finally, if inserttion in database is successful, show update to user
+								if (res.data.insertedId) {
+									Swal.fire({
+										position: "top",
+										icon: "success",
+										title: "Signup successful",
+										showConfirmButton: false,
+										timer: 2000,
+									});
+									//navigate automatically to homepage after sign up
+									navigate("/");
+								}
 						});
-						navigate("/");
 					})
 					.catch(err => {
 						setCustormError({ ...err, registerError: err.code });
