@@ -1,4 +1,4 @@
-import { createBrowserRouter, Navigate  } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import Main from "../layout/Main";
 import Home from "../pages/Home/Home";
 import Menu from "../pages/Menu/Menu";
@@ -11,7 +11,7 @@ import Cart from "../pages/Dashboard/Cart/Cart";
 import AllUsers from "../pages/Dashboard/AllUsers";
 import AdminRoute from "./AdminRoute";
 import AddItems from "../pages/Dashboard/AddItems";
-
+import ManageItems from "../pages/Dashboard/ManageItems";
 
 const router = createBrowserRouter([
 	{
@@ -77,7 +77,15 @@ const router = createBrowserRouter([
 					</AdminRoute>
 				),
 			},
+			{
+				path: "manageItems",
+				element: (
+					<AdminRoute>
+						<ManageItems></ManageItems>
+					</AdminRoute>
+				),
+			},
 		],
 	},
 ]);
- export default router;
+export default router;
