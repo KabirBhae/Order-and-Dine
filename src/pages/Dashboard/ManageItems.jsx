@@ -6,7 +6,8 @@ import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 
 const ManageItems = () => {
-	const [menu] = useMenu();
+	// const [menu] = useMenu();
+	const [menu, , refetch] = useMenu();
 	const axiosSecure = useAxiosSecure();
 
 	const handleDeleteItem = item => {
@@ -21,9 +22,10 @@ const ManageItems = () => {
 		}).then(async result => {
 			if (result.isConfirmed) {
 				const res = await axiosSecure.delete(`/menu/${item._id}`);
-				// console.log(res.data);
+				console.log(res.data);
 				if (res.data.deletedCount > 0) {
 					// refetch to update the ui
+					refetch();
 					Swal.fire({
 						position: "top-end",
 						icon: "success",
