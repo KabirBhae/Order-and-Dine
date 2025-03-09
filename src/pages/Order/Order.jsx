@@ -7,6 +7,7 @@ import { useState } from "react";
 import useMenu from "../../hooks/useMenu";
 import FoodCard from "../../components/FoodCard";
 import { useParams } from "react-router-dom";
+import "./Order.css"
 
 const Order = () => {
 	const categories = ["salads", "pizzas", "soups", "desserts", "drinks"];
@@ -24,7 +25,7 @@ const Order = () => {
 	return (
 		<div>
 			<Cover bgImg={orderCoverImg} title={"Order Food"} details={"Would you like to try a dish?"}></Cover>
-			<Tabs defaultIndex={tabIndex} onSelect={index => setTabIndex(index)}>
+			<Tabs style={{marginTop: "20px"}} defaultIndex={tabIndex} onSelect={index => setTabIndex(index)}>
 				<TabList>
 					<Tab>Salads</Tab>
 					<Tab>Pizzas</Tab>

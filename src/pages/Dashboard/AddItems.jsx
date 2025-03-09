@@ -15,6 +15,17 @@ const AddItems = () => {
 	const onSubmit = async data => {
 		//creating an image object
 		const imageFile = { image: data.image[0] };
+		Swal.fire({
+			title: "Processing...",
+			text: "Please wait while the data is uploaded",
+			icon: "info",
+			allowOutsideClick: false,
+			allowEscapeKey: false,
+			allowEnterKey: false,
+			showConfirmButton: false, // Hides confirm button
+			timer: 3500, // Set the total time (in milliseconds)
+			timerProgressBar: true, // Enables the progress bar
+		});
 		// sending the image to imgbb. A bit unique syntax for uploading image
 		const res = await axiosPublic.post(image_hosting_api, imageFile, {
 			headers: {
@@ -36,7 +47,6 @@ const AddItems = () => {
 				// show success popup
 				reset();
 				Swal.fire({
-					position: "top-end",
 					icon: "success",
 					title: `${data.name} is added to the menu.`,
 					showConfirmButton: false,
@@ -68,6 +78,7 @@ const AddItems = () => {
 								<option disabled value="default">
 									Select a category
 								</option>
+								<option value="popular">Popular</option>
 								<option value="salad">Salad</option>
 								<option value="pizza">Pizza</option>
 								<option value="soup">Soup</option>
@@ -81,7 +92,7 @@ const AddItems = () => {
 							<label className="label">
 								<span className="label-text">Price*</span>
 							</label>
-							<input type="number" placeholder="Price" {...register("price", { required: true })} className="input input-bordered mt-2 w-full" />
+							<input type="number" step="0.01" min="0" placeholder="Price" {...register("price", { required: true })} className="input input-bordered mt-2 w-full" />
 						</div>
 					</div>
 					{/* recipe details */}

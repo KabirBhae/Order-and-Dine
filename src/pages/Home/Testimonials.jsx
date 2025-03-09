@@ -21,7 +21,6 @@ const Testimonials = () => {
 	}, []);
 	return (
 		<section className="my-20">
-			{reviews.length}
 			<SectionTitle subHeading="What our Clients say" heading="Testimonials"></SectionTitle>
 			<Swiper navigation={true} modules={[Navigation]} className="mySwiper">
 				{reviews.map(review => (

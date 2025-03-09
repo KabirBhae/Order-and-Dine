@@ -27,7 +27,6 @@ const ManageItems = () => {
 					// refetch to update the ui
 					refetch();
 					Swal.fire({
-						position: "top-end",
 						icon: "success",
 						title: `${item.name} has been deleted`,
 						showConfirmButton: false,
@@ -40,7 +39,7 @@ const ManageItems = () => {
 
 	return (
 		<div>
-			<SectionTitle heading="Manage All Items" subHeading="Hurry up"></SectionTitle>
+			<SectionTitle heading="Manage All Items" subHeading="Good Management, Better Service"></SectionTitle>
 			<div>
 				<div className="overflow-x-auto">
 					<table className="table w-full">

@@ -10,15 +10,15 @@ const Dashboard = () => {
 		<div className="flex">
 			{/* dashboard side bar */}
 			<div className="w-64 min-h-screen bg-orange-400" id="dashboard-sidebar">
-				<ul className="menu p-4 w-full">
+				<ul className="menu p-4 w-full mt-10">
 					{isAdmin ? (
 						<>
-							<li>
+							{/* <li>
 								<NavLink to="/dashboard/adminHome">
 									<FaHome></FaHome>
 									Admin Home
 								</NavLink>
-							</li>
+							</li> */}
 							<li>
 								<NavLink to="/dashboard/addItems">
 									<FaUtensils></FaUtensils>
@@ -31,12 +31,12 @@ const Dashboard = () => {
 									Manage Items
 								</NavLink>
 							</li>
-							<li>
+							{/* <li>
 								<NavLink to="/dashboard/bookings">
 									<FaBook></FaBook>
 									Manage Bookings
 								</NavLink>
-							</li>
+							</li> */}
 							<li>
 								<NavLink to="/dashboard/users">
 									<FaUsers></FaUsers>
@@ -46,7 +46,7 @@ const Dashboard = () => {
 						</>
 					) : (
 						<>
-							<li>
+							{/* <li>
 								<NavLink to="/dashboard/userHome">
 									<FaHome></FaHome>
 									User Home
@@ -57,19 +57,19 @@ const Dashboard = () => {
 									<FaCalendar></FaCalendar>
 									Reservation
 								</NavLink>
-							</li>
+							</li> */}
 							<li>
 								<NavLink to="/dashboard/cart">
 									<FaShoppingCart></FaShoppingCart>
 									My Cart ({cart.length})
 								</NavLink>
 							</li>
-							<li>
+							{/* <li>
 								<NavLink to="/dashboard/review">
 									<FaAd></FaAd>
 									Add a Review
 								</NavLink>
-							</li>
+							</li> */}
 							<li>
 								<NavLink to="/dashboard/paymentHistory">
 									<FaList></FaList>
@@ -87,17 +87,17 @@ const Dashboard = () => {
 						</NavLink>
 					</li>
 					<li>
-						<NavLink to="/order/salad">
+						<NavLink to="/order">
 							<FaSearch></FaSearch>
 							Menu
 						</NavLink>
 					</li>
-					<li>
+					{/* <li>
 						<NavLink to="/order/contact">
 							<FaEnvelope></FaEnvelope>
 							Contact
 						</NavLink>
-					</li>
+					</li> */}
 				</ul>
 			</div>
 			{/* dashboard content */}

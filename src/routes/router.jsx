@@ -15,11 +15,13 @@ import ManageItems from "../pages/Dashboard/ManageItems";
 import UpdateItem from "../pages/Dashboard/updateItem";
 import Payment from "../pages/Dashboard/Payment/Payment";
 import PaymentHistory from "../pages/Dashboard/PaymentHistory";
+import ErrorPage from "../pages/ErrorPage";
 
 const router = createBrowserRouter([
 	{
 		path: "/",
 		element: <Main></Main>,
+		errorElement: <ErrorPage></ErrorPage>,
 		children: [
 			{
 				path: "",
@@ -53,6 +55,7 @@ const router = createBrowserRouter([
 	},
 	{
 		path: "dashboard",
+		errorElement: <ErrorPage></ErrorPage>,
 		element: (
 			<PrivateRoute>
 				<Dashboard></Dashboard>
