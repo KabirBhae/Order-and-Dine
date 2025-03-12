@@ -6,7 +6,7 @@ const useMenu = () => {
 	// const [menu, setMenu] = useState([]);
 	// const [loading, setLoading] = useState(true);
 	// useEffect(() => {
-	// 	fetch("https://seventh-server.vercel.app/menu")
+	// 	fetch("https://bistro-boss-server-kabir.vercel.app/menu")
 	// 		.then(res => res.json())
 	// 		.then(data => {
 	// 			setMenu(data);
@@ -15,9 +15,12 @@ const useMenu = () => {
 	// }, []);
 	// return [menu, loading];
 
-
 	// using tenstack to use the 'refetch' method in 'manageItems'
-	const {data: menu = [],	isPending: loading, refetch} = useQuery({
+	const {
+		data: menu = [],
+		isPending: loading,
+		refetch,
+	} = useQuery({
 		queryKey: ["menu"],
 		queryFn: async () => {
 			const res = await axiosPublic.get("/menu");
