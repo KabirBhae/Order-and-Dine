@@ -22,7 +22,7 @@ const Navbar = () => {
 				Swal.fire({
 					position: "top",
 					icon: "warning",
-					title: "Logged out not successful",
+					title: "Log out not successful",
 					showConfirmButton: false,
 					timer: 1500,
 				});
@@ -40,15 +40,15 @@ const Navbar = () => {
 				<NavLink to="order">Order Now</NavLink>
 			</li>
 			<li>
-				<Link to="/dashboard/cart">
-					<button className="btn">
-						<FaShoppingCart className="mr-2"></FaShoppingCart>
+				<NavLink to="/dashboard/cart">
+					<button id="cart-badge" className="btn">
+						<FaShoppingCart className="mr-1"></FaShoppingCart>
 						<div className="badge badge-secondary">+{cart.length}</div>
 					</button>
-				</Link>
+				</NavLink>
 			</li>
 			{user && user?.email ? (
-				<li onClick={handleLogout} className="btn btn-ghost rounded-none">
+				<li onClick={handleLogout} className="btn btn-ghost rounded-sm">
 					Logout
 				</li>
 			) : (

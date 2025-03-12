@@ -42,7 +42,7 @@ const FoodCard = ({ foodItem }) => {
 				<h2 className="card-title justify-center">{name}</h2>
 				<p className="text-sm">{recipe}</p>
 				<div className="card-actions justify-center">
-					<button onClick={handleAddToCart} className="btn btn-ghost border-0 border-orange-400 border-b-4 mt-4">
+					<button onClick={handleAddToCart} className="btn btn-outline hover:bg-black hover:text-yellow-400 border-0 border-b-4 hover:border-yellow-400 mt-4 inter-font">
 						Add to Cart
 					</button>
 				</div>

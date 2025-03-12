@@ -4,3 +4,11 @@
 a.active{
     background-color: #000;
 }
+#cart-badge{
+    height: 33px;
+    padding: 0;
+    color: white;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+}

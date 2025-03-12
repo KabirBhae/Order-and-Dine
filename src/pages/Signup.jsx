@@ -61,13 +61,13 @@ const Signup = () => {
 					<form onSubmit={handleSignUp} className="card-body">
 						<fieldset className="fieldset">
 							<label className="fieldset-label">Name</label>
-							<input required type="text" name="name" className="input" placeholder="Enter your Name" />
+							<input required type="text" name="name" className="input" placeholder="Enter your Name" autoComplete="on" />
 							<label className="fieldset-label">Email</label>
-							<input required type="email" name="email" className="input" placeholder="Enter your Email" />
+							<input required type="email" name="email" className="input" placeholder="Enter your Email" autoComplete="on" />
 							<label className="fieldset-label">Photo URL</label>
 							<input type="url" name="photo" className="input" placeholder="Enter the link to your Photo" />
 							<label className="fieldset-label">Password</label>
-							<input required type="password" name="password" className="input" placeholder="Enter your Password" />
+							<input required type="password" name="password" className="input" placeholder="Enter your Password" autoComplete="off" />
 							{customError && (
 								<label className="label mb-2">
 									<span className="label-text text-xs text-red-500">{customError.registerError}</span>
@@ -86,7 +86,7 @@ const Signup = () => {
 				</div>
 				<div className="text-center md:text-left md:w-1/2">
 					<h1 className="text-5xl font-bold">Signup now!</h1>
-					<p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+					<p className="py-6">Sign up to enjoy a seamless ordering experience! Create your account to explore our delicious menu, track your orders, and make your dining experience even more convenient.</p>
 				</div>
 			</div>
 		</div>

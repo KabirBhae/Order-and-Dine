@@ -55,9 +55,9 @@ const Login = () => {
 					<form onSubmit={handleLogin} className="card-body">
 						<fieldset className="fieldset">
 							<label className="fieldset-label">Email</label>
-							<input required type="email" name="email" className="input" placeholder="Email" />
+							<input required type="email" name="email" className="input" placeholder="Email" autoComplete="on" />
 							<label className="fieldset-label">Password</label>
-							<input required type="password" name="password" className="input" placeholder="Password" />
+							<input required type="password" name="password" className="input" placeholder="Password" autoComplete="off" />
 							<div>
 								<a className="link link-hover">Forgot password?</a>
 							</div>
@@ -86,7 +86,7 @@ const Login = () => {
 				</div>
 				<div className="text-center md:text-left md:w-1/2">
 					<h1 className="text-5xl font-bold">{loginString}</h1>
-					<p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+					<p className="py-6">Welcome back! Log in to continue exploring our delicious menu, place orders effortlessly, and enjoy a seamless dining experience.</p>
 				</div>
 			</div>
 		</div>
