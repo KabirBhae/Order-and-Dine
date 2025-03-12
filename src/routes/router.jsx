@@ -106,7 +106,7 @@ const router = createBrowserRouter([
 						<UpdateItem></UpdateItem>
 					</AdminRoute>
 				),
-				loader: ({ params }) => fetch(`http://localhost:5002/menu/${params.id}`),
+				loader: ({ params }) => fetch(`https://seventh-server.vercel.app/menu/${params.id}`),
 			},
 		],
 	},
