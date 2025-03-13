@@ -1,18 +1,6 @@
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a id="readme-top"></a>
 
-
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -101,21 +89,20 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
    git clone https://github.com/KabirBhae/Bistro-Boss.git
    ```
-3. Navigate to the folder
+2. Navigate to the folder
     ```sh
    cd Bistro-Boss
    ```
-4. Install NPM packages
+3. Install NPM packages
    ```sh
    npm install
    ```
-5. Setup Firebase project
-   * Go to Firebase Console
+4. Setup Firebase project
+   * Go to [Firebase Console][firebase-console-url]
    * Create a New Project
    * Then click on the Web (</>) icon to set up a Web App.
    * After registering the app, copy the config and save it in your .env.local file like this:
@@ -127,7 +114,7 @@ This is an example of how to list things you need to use the software and how to
     VITE_FIREBASE_MESSAGING_SENDER_ID=your-messaging-sender-id
     VITE_FIREBASE_APP_ID=your-app-id
    ```
-6. Start the Development Server
+5. Start the Development Server
    ```sh
    npm run dev
    ```
@@ -170,13 +157,14 @@ Arafat Kabir Khan - [My Portfolio Website](https://arafats-portfolio.webflow.io/
 
 The completion of the project would be challenging without:
 
-* [sweetalert2](https://sweetalert2.github.ioa)
 * [Vercel](https://vercel.com/docs)
 * [ImgBB](https://imgbb.com/)
-* [react-parallax](https://github.com/rrutsche/react-parallax)
+* [TanStack Query](https://tanstack.com/query/latest)
+* [Sweetalert2](https://sweetalert2.github.ioa)
+* [React Parallax](https://github.com/rrutsche/react-parallax)
 * [React Responsive Carousel](https://react-responsive-carousel.js.org/)
 * [React Simple Captcha](https://github.com/masroorejaz/react-simple-captcha)
-* [react-tabs](https://github.com/reactjs/react-tabs)
+* [React Tabs](https://github.com/reactjs/react-tabs)
 * [Swiper](https://swiperjs.com/)
 * [React Hook Form](https://react-hook-form.com)
 * [React Icons](https://react-icons.github.io/react-icons)
@@ -190,6 +178,13 @@ The completion of the project would be challenging without:
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
 [contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
+[DaisyUI]: https://img.shields.io/badge/DaisyUI-5A0EF8?logo=daisyui&logoColor=fff
+[DaisyUI-url]: https://daisyui.com
+[Express]: https://img.shields.io/badge/Express.js-%23404d59.svg?logo=express&logoColor=%2361DAFB
+[Express-url]: https://expressjs.com/
+[Firebase]: https://img.shields.io/badge/Firebase-039BE5?logo=Firebase&logoColor=white
+[Firebase-url]: https://firebase.google.com/
+[firebase-console-url]: https://console.firebase.google.com/
 [forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
 [forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
 [stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
@@ -199,21 +194,15 @@ The completion of the project would be challenging without:
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
 [license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[Vite-url]: https://vite.dev/
+[MongoDB]: https://img.shields.io/badge/MongoDB-%234ea94b.svg?logo=mongodb&logoColor=white
+[MongoDB-url]: https://www.mongodb.com/
+[Node]: https://img.shields.io/badge/Node.js-6DA55F?logo=node.js&logoColor=white
+[Node-url]: https://nodejs.org/en
 [linkedin-url]: https://linkedin.com/in/othneildrew
 [product-screenshot]: images/screenshot.png
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
 [TailwindCSS]: https://img.shields.io/badge/Tailwind%20CSS-%2338B2AC.svg?logo=tailwind-css&logoColor=white
 [TailwindCSS-url]: https://tailwindcss.com/
-[DaisyUI]: https://img.shields.io/badge/DaisyUI-5A0EF8?logo=daisyui&logoColor=fff
-[DaisyUI-url]: https://daisyui.com
 [Vite]: https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=fff
-[Vite-url]: https://vite.dev/
-[MongoDB]: https://img.shields.io/badge/MongoDB-%234ea94b.svg?logo=mongodb&logoColor=white
-[MongoDB-url]: https://www.mongodb.com/
-[Express]: https://img.shields.io/badge/Express.js-%23404d59.svg?logo=express&logoColor=%2361DAFB
-[Express-url]: https://expressjs.com/
-[Node]: https://img.shields.io/badge/Node.js-6DA55F?logo=node.js&logoColor=white
-[Node-url]: https://nodejs.org/en
-[Firebase]: https://img.shields.io/badge/Firebase-039BE5?logo=Firebase&logoColor=white
-[Firebase-url]: https://firebase.google.com/
