@@ -4,7 +4,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/KabirBhae/Bistro-Boss/tree/main">
+  <a href="https://github.com/KabirBhae/Order-and-Dine/tree/main">
     <img src="public/logo.png" alt="Logo" width="80" height="80">
   </a>
 </div>
@@ -13,6 +13,9 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
+    <li>
+      <a href="#explore-the-project">Explore The Project</a>
+    </li>
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
@@ -27,13 +30,17 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#Future-Developments">Future Developments</a></li>
+    <li><a href="#future-developments">Future Developments</a></li>
     <li><a href="#contact">Contact</a></li>
 
   </ol>
 </details>
 
 
+
+## Explore the project
+Checkout the deployed project at: [Order and Dine Website](https://bistro-boss-bf579.web.app)  
+Source code of server side is available in this repository: [Order-and-Dine-Server](https://github.com/KabirBhae/Bistro-Boss-Server)
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
@@ -46,11 +53,6 @@ Project Summary:
 * Payment functionality completed using Stripe.
 * Utilization of libraries like TanStack Query, React Hook Form, DaisyUI, Swiper.js etc. to write performance-efficient, scalable code while enhancing the overall user experience.
 * Use of custom hooks and context API to write modular code.
-
-Checkout the deployed project at: [Bistro-Boss](https://bistro-boss-bf579.web.app)  
-Source code of server side is available in this repository: [Bistro-Boss-Server](https://github.com/KabirBhae/Bistro-Boss-Server)
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 ### Built With
@@ -91,7 +93,7 @@ This is an example of how to list things you need to use the software and how to
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/KabirBhae/Bistro-Boss.git
+   git clone https://github.com/KabirBhae/Order-and-Dine.git
    ```
 2. Navigate to the folder
     ```sh
@@ -134,7 +136,7 @@ This project could be used for any real life restaurant that performs food deliv
 <!-- Future Developments -->
 ## Future-Developments
 
-- Add user and admin dashboard
+- Add <s>admin</s> (done) and user dashboard
 - Making the UI responsive for small and medium devices
 - Making the UI more consistent
 - Making the UX better
@@ -166,6 +168,7 @@ The completion of the project would be challenging without:
 * [React Simple Captcha](https://github.com/masroorejaz/react-simple-captcha)
 * [React Tabs](https://github.com/reactjs/react-tabs)
 * [Swiper](https://swiperjs.com/)
+* [Recharts](https://github.com/recharts/recharts)
 * [React Hook Form](https://react-hook-form.com)
 * [React Icons](https://react-icons.github.io/react-icons)
 * [Img Shields](https://shields.io)

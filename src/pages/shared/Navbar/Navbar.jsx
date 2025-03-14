@@ -78,8 +78,8 @@ const Navbar = () => {
 						{navOptions}
 					</ul>
 				</div>
-				<Link to="/" className="btn btn-ghost text-xl">
-					Bistro Boss
+				<Link to="/" className="btn btn-ghost text-lg">
+					Order and Dine
 				</Link>
 			</div>
 			<div className="navbar-center hidden lg:flex">
