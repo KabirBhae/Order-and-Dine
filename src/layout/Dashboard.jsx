@@ -13,12 +13,12 @@ const Dashboard = () => {
 				<ul className="menu p-4 w-full mt-10">
 					{isAdmin ? (
 						<>
-							{/* <li>
+							<li>
 								<NavLink to="/dashboard/adminHome">
 									<FaHome></FaHome>
 									Admin Home
 								</NavLink>
-							</li> */}
+							</li>
 							<li>
 								<NavLink to="/dashboard/addItems">
 									<FaUtensils></FaUtensils>
